@@ -70,6 +70,10 @@ const Auth = props => {
 			<Aux>
 				{redirect}
 				{validation}
+				<div>
+					<p>Please switch to "SIGNIN"</p>
+					<p>Account: test@1234.com, Password: test1234</p>
+				</div>
 				<form onSubmit={submitHandler}>
 					{input}
 					<Button btnType='Success'>{signUpState.isSignUp ? 'SIGN UP' : 'SIGN IN'}</Button>
