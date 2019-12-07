@@ -1,0 +1,9 @@
+.Test {
+	width: 350px;
+	margin: auto;
+}
+
+.Test div {
+	width: 250px;
+	margin: 20px auto;
+}
