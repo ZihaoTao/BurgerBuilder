@@ -15,16 +15,22 @@ const reducer = (state = initState, action) => {
 				orders: action.orders,
 				error: false
 			};
+		case actionTypes.RELOAD: {
+			return {
+				...state,
+				purchaseFinished: false
+			};
+		}
 		case actionTypes.FETCH_ORDERS_FAILED:
 			return {
 				...state,
 				error: true
-			}
+			};
 		case actionTypes.PURCHASE_BURGER_SUCCESS:
 			const newOrder = {
 				...action.orderData,
 				id: action.orderId
-			}
+			};
 			return {
 				...state,
 				orders: state.orders.concat(newOrder),
@@ -41,7 +47,7 @@ const reducer = (state = initState, action) => {
 			return {
 				...state,
 				loading: true
-			}
+			};
 		default:
 			return state;
 	}

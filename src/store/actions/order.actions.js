@@ -24,7 +24,13 @@ export const initOrders = (token, userId) => {
 			.catch(err => {
 				dispatch(fetchOrdersFailed());
 			});
-	}
+	};
+};
+
+export const reload = () => {
+	return {
+		type: actionTypes.RELOAD
+	};
 };
 
 export const purchaseBurgerSuccess = (id, orderData) => {
@@ -44,7 +50,7 @@ export const purchaseBurgerFailed = () => {
 export const purchaseBurgerStart = () => {
 	return {
 		type: actionTypes.PURCHASE_BURGER_START
-	}
+	};
 };
 
 export const purchaseBurger = (orderData, token) => {
@@ -57,11 +63,11 @@ export const purchaseBurger = (orderData, token) => {
 			.catch(err => {
 				dispatch(purchaseBurgerFailed());
 			});
-	}
-}
+	};
+};
 
 export const fetchOrdersFailed = () => {
 	return {
 		type: actionTypes.FETCH_ORDERS_FAILED,
 	};
-}  
+}  ;

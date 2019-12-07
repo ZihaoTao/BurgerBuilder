@@ -16,6 +16,7 @@ const BurgerBuilder = props => {
 	useEffect(() => {
 		if(!props.building) props.onIngredientInit()
 		props.onAuthLoading();
+		props.onReload();
 	}, [])
 
 	const purchaseHandler = () => {
@@ -79,7 +80,8 @@ const mapDispatchToProps = dispatch => {
 	return {
 		onIngredientUpdate: (ingName, isAdded) => dispatch(actions.updateIngredient(ingName, isAdded)),
 		onIngredientInit: () => dispatch(actions.initIngredients()),
-		onAuthLoading: () => dispatch(actions.authLoading())
+		onAuthLoading: () => dispatch(actions.authLoading()),
+		onReload: () => dispatch(actions.reload())
 	};
 }
 
